@@ -1,4 +1,4 @@
-from typing import Literal
-from .activity import ActivityObject, ActivityList, ActivityAction
+from typing import Literal as _Literal
+from .activity import ActivityObject, ActivityList, ActivityAction, ActivitySingle
 
-methods = Literal['GET', 'POST', 'PATCH', 'PUT', 'DELETE', 'HEAD', 'OPTION']
+methods = _Literal['GET', 'POST', 'PATCH', 'PUT', 'DELETE', 'HEAD', 'OPTION']

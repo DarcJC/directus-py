@@ -28,6 +28,10 @@ class ActivityList(BaseModel):
     data: List[ActivityObject]
 
 
+class ActivitySingle(BaseModel):
+    data: ActivityObject
+
+
 class ActivityAction(BaseModel):
     list: Callable[[], ActivityList]
-    list_by_id: Callable[[constr(min_length=1)], ActivityList]
+    list_by_id: Callable[[constr(min_length=1)], ActivitySingle]

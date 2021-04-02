@@ -27,12 +27,15 @@ class DirectusClient(object):
     def _fetch(self, *,
                url: constr(min_length=1),
                method: methods = 'GET',
-               data: Optional[dict] = None) -> dict:
+               data: Optional[dict] = None,
+               params: Optional[dict] = None) -> dict:
         return _Map(
             self._request(
                 method=method,
                 url=f"{self._base_url}{url}",
-                data=data,).json()
+                data=data,
+                params=params,
+            ).json()
         )
 
     @staticmethod
@@ -63,4 +66,4 @@ class DirectusClient(object):
 if __name__ == '__main__':
     _token = 'a' * 16
     client = DirectusClient(token=_token, base_url='http://localhost:8055')
-    print(client.activity.list_by_id("1"))
+    print(client.activity.__dir__())
